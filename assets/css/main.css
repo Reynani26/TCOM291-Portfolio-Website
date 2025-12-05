@@ -3031,7 +3031,27 @@ html {
     z-index: 9999;
 }
 
-#backToTop:hover {
-    background-color: #b81e3d;
+/* Smooth dropdown animation */
+details.dropdown .content {
+	overflow: hidden;
+	max-height: 0;
+	transition: max-height 0.35s ease;
 }
+
+/* Optional: style summary cursor */
+details.dropdown summary {
+	cursor: pointer;
+}
+
+/* Optional: remove default arrow */
+details.dropdown summary::-webkit-details-marker {
+	display: none;
+}
+
+/* Prevent project boxes from stretching to match tallest one */
+#projects .row {
+	align-items: flex-start !important;
+}
+
+
 

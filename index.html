@@ -176,6 +176,18 @@
                                                         two card games (21 and Memory) using JavaScript, HTML and Bootstrap. Application was
                                                         made with classmates for a project.
                                                     </p>
+                                                    <details class="dropdown">
+                                                        <summary><strong>Reflection</strong></summary>
+                                                        <div class="content">
+                                                            <p>
+                                                                Having this being the first experience developing software for a mock client, it was
+                                                                very overwhelming. There were a lot of poor decisions made from my group as a whole that
+                                                                made the first half the project very difficult. The biggest takeaway I took from the project
+                                                                was that communication as a team is very important to ensure that everyone was on the same page.
+                                                                Fortunately, we were able to pull it off and make a functioning application.
+                                                            </p>
+                                                        </div>
+                                                    </details>
 												</section>
 											</div>
 											<div class="col-4 col-12-small">
@@ -183,13 +195,25 @@
 													<img class="image featured" src="images/United%20Way.png" alt="United Way" style="width: 100%; height: 100%" />
 													<header>
 														<h3>United Way Grant Management Application</h3>
-
 													</header>
 													<p>
                                                         Developed a web application for an external client that allows them to
                                                         manage grant applications from non-profit organizations. Also allows for
                                                         organizations to apply for grant applications.
                                                     </p>
+                                                    <details class="dropdown">
+                                                        <summary><strong>Reflection</strong></summary>
+                                                        <div class="content">
+                                                            <p>
+                                                                Being that this is my second time developing a software, I have much more experience
+                                                                with it and was a bit more prepared, but the kicker was that it was for an actual client.
+                                                                I definitely made mistakes during the process, but my communication with the team has improved.
+                                                                Working with clients that expect a fully functioning application does put a lot of pressure, but
+                                                                the biggest thing I tried to focus on was just enjoying the developing process. It was definitely cool
+                                                                to see a working application that I contributed to, that is going to be used in real time.
+                                                            </p>
+                                                        </div>
+                                                    </details>
 												</section>
 											</div>
                                             <div class="col-4 col-12-small">
@@ -197,7 +221,6 @@
                                                     <img class="image featured" src="images/Workout%20Information%20Page.png" alt="Workout Tracker" style="width: 100%; height: 100%" />
                                                     <header>
                                                         <h3>Workout Tracker Application</h3>
-
                                                     </header>
                                                     <p>
                                                         Developed a workout tracker application for my web development class
@@ -205,6 +228,20 @@
                                                         functionality and is a full stack application made by myself. I personally
                                                         use this application.
                                                     </p>
+                                                    <details class="dropdown">
+                                                        <summary><strong>Reflection</strong></summary>
+                                                        <div class="content">
+                                                            <p>
+                                                                This was a project for my web development class. During the start of developing
+                                                                this project, it was very difficult as it was initially supposed to be a two-person
+                                                                project, which I did have a partner, but unfortunately decided to drop out of the course, in
+                                                                which I had to build it myself. I will say that I had a lot of fun working on this project,
+                                                                as working out is something I do and enjoy a lot, so building a workout tracker application made
+                                                                the developing process so much more fun. I use this application to track my workouts, and I hope to
+                                                                expand on it more depending on my needs
+                                                            </p>
+                                                        </div>
+                                                    </details>
                                                 </section>
                                             </div>
 										</div>
@@ -268,6 +305,35 @@
                 });
             });
         </script>
+                                        <script>
+                                            document.querySelectorAll("details.dropdown").forEach((el) => {
+                                                const summary = el.querySelector("summary");
+                                                const content = el.querySelector(".content");
+
+                                                summary.addEventListener("click", (e) => {
+                                                    e.preventDefault();
+
+                                                    if (el.open) {
+                                                        // Closing animation
+                                                        content.style.maxHeight = content.scrollHeight + "px";
+                                                        requestAnimationFrame(() => {
+                                                            content.style.maxHeight = "0";
+                                                        });
+                                                        setTimeout(() => el.removeAttribute("open"), 350);
+                                                    } else {
+                                                        // Opening animation
+                                                        el.setAttribute("open", "");
+                                                        content.style.maxHeight = content.scrollHeight + "px";
+
+                                                        content.addEventListener(
+                                                            "transitionend",
+                                                            () => (content.style.maxHeight = "none"),
+                                                            { once: true }
+                                                        );
+                                                    }
+                                                });
+                                            });
+                                        </script>
 
 
 
