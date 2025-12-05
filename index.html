@@ -253,13 +253,13 @@
 				</section>
 
 			<!-- Footer -->
-				<section>
+				<section id="contact">
                     <p style="text-align: center"><strong>Have questions? Get in touch with me!</strong></p>
-                    <p style="text-align: center"><strong>E-mail me at: </strong><a href="mailto:ordonez3993@saskpolytech.ca">ordonez3993@saskpolytech.ca</a></p>
+                    <p style="text-align: center"><strong>E-mail me at: </strong><a href="mailto:=oreynan26@gmail.com">oreynan26@gmail.com</a></p>
                     <p style="text-align: center"><strong>Or contact me using this form:</strong></p>
-                    <section id="contact">
+                    <section>
                         <h2>Contact Me</h2>
-                        <form class="contact-form" action="#" method="POST">
+                        <form class="contact-form" id="contact-form" action="#" method="POST">
                             <label for="name">Name</label>
                             <input type="text" id="name" name="name" required>
 
@@ -332,6 +332,24 @@
                                                         );
                                                     }
                                                 });
+                                            });
+                                        </script>
+                                        <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+                                        <script>
+                                            emailjs.init("iAvizn-el1Otf-9ts"); // Replace with your EmailJS public key
+
+                                            document.getElementById("contact-form").addEventListener("submit", function(event) {
+                                                event.preventDefault();
+
+                                                emailjs.sendForm("service_twzv6vo", "template_2o594ki", this)
+                                                    .then(() => {
+                                                        alert("Message sent successfully!");
+                                                        this.reset();
+                                                    })
+                                                    .catch((error) => {
+                                                        alert("Failed to send message.");
+                                                        console.error("EmailJS Error:", error);
+                                                    });
                                             });
                                         </script>
 
